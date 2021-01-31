@@ -1,0 +1,6 @@
+framework module ZGRImSDK {
+  umbrella header "ZGRImSDK.h"
+
+  export *
+  module * { export * }
+}
