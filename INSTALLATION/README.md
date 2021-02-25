@@ -2,10 +2,10 @@
 
 ## Setup
 
-### Настройка основного приложения
+### 1. Настройка основного приложения
 
 * Убедиться в наличии всех необходимых файлов от ZGR.
-    * `ZGRConfig.json` (файл конфигурации)
+    * `ZGRConfig.json` (файл конфигации)
     * `ZGRImSDK.xcframework` (динамическая универсальная библиотека)
     
 * Открыть Xcode и установить фреймворк в приложение: 
@@ -62,12 +62,12 @@ func application(_ application: UIApplication, didRegisterForRemoteNotifications
 ```
 
 
-* Отправить внешний идентификар пользователя и/или номер телефона пользователя в ZGR
+* Отправить номер телефона пользователя. Для отправки внешнего идентификатора обратитесь к разделу `Быстрый гайд` данной инструкции.
 
 Objective-C:
 
 ```
-[[ZGRMessaging sharedInstance] sendUserPhoneNumber:@"79876543210" externalUserId:"id1" withCompletionHandler:^{
+[[ZGRMessaging sharedInstance] saveUserPhoneNumber:@"79876543210" withCompletionHandler^(ZGRUser * _Nullable user, ZGRError * _Nullable error) {
     // Perform any code
 }];
 ```
@@ -75,7 +75,7 @@ Objective-C:
 Swift:
 
 ```
-ZGRMessaging.sharedInstance().sendUserPhoneNumber("79876543210", externalUserId: "id1") {
+ZGRMessaging.sharedInstance().saveUserPhoneNumber("79876543210") { user, error in
     // Perform any code
 }
 ```
@@ -94,12 +94,11 @@ Objective-C:
 ...
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [application registerForRemoteNotifications];
-
     [UNUserNotificationCenter currentNotificationCenter].delegate = self;
     UNAuthorizationOptions options = UNAuthorizationOptionAlert | UNAuthorizationOptionSound | UNAuthorizationOptionBadge;
     [[UNUserNotificationCenter currentNotificationCenter] requestAuthorizationWithOptions:options
                                                                         completionHandler:^(BOOL granted, NSError * _Nullable error) {
+        [application registerForRemoteNotifications];
         
     }];
     return YES;
@@ -179,7 +178,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive respo
 ```
 
 
-### Создание и настройка расширений приложения
+### 2. Создание и настройка расширений приложения
 
 #### Notification Service Extension
 * Обязательно для корректной работы SDK.
@@ -252,22 +251,24 @@ func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive respo
 6. В `Info.plist` файле расширения `Notification Content Extension` заменить значение поля `NSExtension/NSExtensionAttributes/UNNotificationExtensionCategory` на `zgr`
 7. В этом же файле заменить значение поля `NSExtension/NSExtensionAttributes/UNNotificationExtensionInitialContentSizeRatio`  на `0`.
 
-### Настройка App Group
+### 3. Настройка App Group
 
-* Данная процедура необходима для обеспечения возможности синхронизации конфигурации и локальной базы данных SDK между основным таргетом и расширениями, так как первоначально они изолированы друг от друга. Не беспокойтесь, ниже приложены детальные скриншоты выполненной настройки. 
+* Данный шан необходимо выполнить для возможности синхронизации конфигурации и локальной базы данных пушей между основным приложением и его расширениями. Если у вас возникнут трудности с этим шагом, то вам помогут приложенные к инструкции изображения `App_Group_*`.
 
 * Добавить `Сapability` -> `App Group` в возможности вашего приложения.
     1. Перейти в настройки основного таргета вашего приложения.
     2. Перейти во вкладку `Signing & Capabilities`.
     3. Нажать кнопку `+ Capability`.
     4. Выбрать `App Groups`.
-    5. Повторить шаги 1-4, но для таргета `Notification Service Extension`.
-    6. Найти в проекте файлы `entitlements` для основного таргета и `Notification Service Extension`
-    7. Добавить запись `group.im.zgr` в раздел `com.apple.security.application-groups` в данных файлах.
+    5. В появившемся разделе `App Groups` нажать кнопку `+ (Создание новой группы)`.
+    6. В окне `Add a new container` после `group.` ввести идентификатор вашего приложения (`bundle identifier`).
+        - Пример: приложение имеет идентификатор `im.zgr.app`, в данное поле необходимо ввести строку `group.im.zgr.app`.
+    ![Изображение окна ввода](./App_Group.png)
+        
+    7. Без изменений повторить шаги 1-6 для таргета `Notification Service Extension`.
     ![Изображение 1](./App_Group_1.png)
     ![Изображение 2](./App_Group_2.png)
     ![Изображение 3](./App_Group_3.png)
-    ![Изображение 4](./App_Group_4.png)
     
     
 ## Быстрый гайд
