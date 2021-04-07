@@ -42,17 +42,13 @@
 Objective-C:
 
 ```
-
 #import <ZGRImSDK/ZGRImSDK.h>
-
 ```
    
 Swift:
 
 ```
-
 import ZGRImSDK
-
 ```
 
 
@@ -61,7 +57,6 @@ import ZGRImSDK
 Objective-C:
 
 ```
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [application registerForRemoteNotifications];
     return YES;
@@ -70,13 +65,11 @@ Objective-C:
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     [[ZGRMessaging sharedInstance] registerForRemoteNotifications:deviceToken];
 }
-
 ```
  
 Swift:
 
 ```
-
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
     application.registerForRemoteNotifications()
     return true
@@ -85,7 +78,6 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
     ZGRMessaging.sharedInstance().register(forRemoteNotifications: deviceToken)
 }
-
 ```
 
 
@@ -94,21 +86,17 @@ func application(_ application: UIApplication, didRegisterForRemoteNotifications
 Objective-C:
 
 ```
-
 [[ZGRMessaging sharedInstance] saveUserPhoneNumber:@"79876543210" withCompletionHandler^(ZGRUser * _Nullable user, ZGRError * _Nullable error) {
     // Perform any code
 }];
-
 ```
  
 Swift:
 
 ```
-
 ZGRMessaging.sharedInstance().saveUserPhoneNumber("79876543210") { user, error in
     // Perform any code
 }
-
 ```
 
 
@@ -117,7 +105,6 @@ ZGRMessaging.sharedInstance().saveUserPhoneNumber("79876543210") { user, error i
 Objective-C:
 
 ```
-
 #import <UserNotifications/UserNotifications.h>
 
 @interface AppDelegate () <UNUserNotificationCenterDelegate>
@@ -135,13 +122,11 @@ Objective-C:
     }];
     return YES;
 }
-
 ```
     
 Swift:
 
 ```
-
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     application.registerForRemoteNotifications()
     
@@ -151,7 +136,6 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
     }
     return true
 }
-
 ```
 
 
@@ -160,26 +144,21 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 Objective-C:
 
 ```
-
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler {
     [[ZGRMessaging sharedInstance] userNotificationCenter:center
                            didReceiveNotificationResponse:response
                                     withCompletionHandler:^(ZGRNotification * _Nonnull notification,
                                                              ZGRAction * _Nonnull selectedAction) {
     // Handle notification from ZGR
-}
-
-    // My own code
     
+    // My own code
     completionHandler();
 }
-
 ```
 
 Swift:
 
 ```
-
 func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
     ZGRMessaging.sharedInstance().userNotificationCenter(center, didReceive: response) { (notification, action) in
         // Handle notification from ZGR
@@ -189,10 +168,9 @@ func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive respo
     
     completionHandler()
 }
-
 ```
 
-### Обработка нажатия на контент уведомления. либо на кнопки под контентом. Для определения нажатой кнопки необходимо сопоставить ее идентификатор с отправленным в ZGR.
+### Обработка нажатия на контент уведомления, либо на кнопки под контентом. Для определения нажатой кнопки необходимо сопоставить ее идентификатор с отправленным в ZGR.
 
 Objective-C:
 
@@ -215,13 +193,11 @@ Objective-C:
         // Perform any code
     }
 }
-
 ```
 
 Swift:
 
 ```
-
 ZGRMessaging.sharedInstance().userNotificationCenter(center, didReceive: response) { (notification, action) in
     
     // Handle notification from ZGR
@@ -237,7 +213,6 @@ ZGRMessaging.sharedInstance().userNotificationCenter(center, didReceive: respons
         // Perform any code
     }
 }
-
 ```
 
 ### Получение уведомлений о полученном SDK push сообщении
@@ -247,18 +222,15 @@ ZGRMessaging.sharedInstance().userNotificationCenter(center, didReceive: respons
 Objective-C:
 
 ```
-
 [NSNotificationCenter.defaultCenter addObserver:self 
                                        selector:@selector(some_function:) 
                                            name:ZGRDidReceiveRemoteNotificationKey 
                                          object:nil];
-
 ```
 
 Swift:
 
 ```
-
 extension Notification.Name {
     static let didReceiveRemoteNotificationName = Notification.Name("ZGRDidReceiveRemoteNotificationKey")
 }
@@ -269,14 +241,11 @@ NotificationCenter.default.addObserver(self, selector: #selector(some_function),
 
 @objc func some_function(notification: Notification) {
 }
-
 ```
-
 
 В качестве параметра в функцию-обработчик будет передаваться ссылка на системную нотификацию, в свойстве userInfo которой будет сохранен пришедший с сервера пуш:
 
 ```
-
 NSConcreteNotification 0x281ee5aa0 {
     name = ZGRDidReceiveRemoteNotificationKey; 
     object = <ZGRMessaging: 0x28056dec0>; 
@@ -293,9 +262,7 @@ NSConcreteNotification 0x281ee5aa0 {
         };
     "some other properties" = "value";
 }}
-
 ```
-
 
 
 ## Создание и настройка расширений приложения
@@ -306,7 +273,7 @@ NSConcreteNotification 0x281ee5aa0 {
 Сервис, занимающийся в фоне отправкой отчетов о прочтении.
 
 * Создать расширение приложения (extension)
-    1. Зайти в меню приложния и на левой панели в нижнем левом углу нажать "+"
+    1. Зайти в меню приложения и на левой панели в нижнем левом углу нажать "+"
     2. В списке расширений выбрать `Notification Service Extension`
     3. Ввести любое название, например:  `notification-service`
     3. Во всплывающем запросе на активацию новосозданной схемы выбрать "Cancel"
@@ -322,26 +289,22 @@ NSConcreteNotification 0x281ee5aa0 {
  Objective-C:
  
 ```
-
 #import <ZGRImSDKExtension/ZGRNotificationService.h>
 
 @interface NotificationService : ZGRNotificationService
 
 @end
-
 ```
 
 Swift:
 
 ```
-
 import UserNotifications
 import ZGRImSDK
 
 class NotificationService: ZGRNotificationService {
+
 }
-
-
 ```
 
 
@@ -351,7 +314,7 @@ class NotificationService: ZGRNotificationService {
 Сервис, занимающийся отображением медиаконтента в пуш-уведомлении.
 
 * Создать расширение приложения (extension).
-    1. Зайти в меню приложния и на левой панели в нижнем левом углу нажать "+"
+    1. Зайти в меню приложения и на левой панели в нижнем левом углу нажать "+"
     2. В списке расширений выбрать `Notification Content Extension`
     3. Ввести любое название, например:  `notification-content`
     3. Во всплывающем запросе на активацию новосозданной схемы выбрать "Cancel"
@@ -368,7 +331,6 @@ class NotificationService: ZGRNotificationService {
 Objective-C:
     
 ```
-
 #import <ZGRImSDKExtension/ZGRNotificationContent.h>
 
 @interface NotificationViewController () <UNNotificationContentExtension>
@@ -387,13 +349,11 @@ Objective-C:
 }
 
 @end
-
 ```
 
 Swift:
 
 ```
-
 import UIKit
 import UserNotifications
 import UserNotificationsUI
@@ -413,7 +373,6 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
     }
 
 }
-
 ```
 
 6. В `Info.plist` файле расширения `Notification Content Extension` заменить значение поля `NSExtension/NSExtensionAttributes/UNNotificationExtensionCategory` на `zgr`
@@ -452,7 +411,6 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
 Objective-C:
 
 ```
-
 [[ZGRMessaging sharedInstance] fetchUserWithCompletionHandler:^(ZGRUser * _Nullable user, ZGRError * _Nullable error) {    
     if (user.externalUserId.lenght > 0) {
         NSLog("External user id: %@" user.externalUserId];
@@ -461,12 +419,11 @@ Objective-C:
         NSLog("Phone number: %@" user.phoneNumber];
     }
 }];
-
 ```
+
 Swift:
 
 ```
-
 ZGRMessaging.sharedInstance().fetchUser() { user, error in
     
     if let userId = user?.externalUserId, userId.count > 0 {
@@ -477,16 +434,13 @@ ZGRMessaging.sharedInstance().fetchUser() { user, error in
         print("Phone number: \(phone)")
     }
 }
-
 ```
 
 #### Обновление номера телефона в профиле
 
 Objective-C:
 
-
 ```
-
 [[ZGRMessaging sharedInstance] saveUserPhoneNumber:@"79876543210" withCompletionHandler:^(ZGRUser * _Nullable user, ZGRError * _Nullable error) {
     if (user.externalUserId.lenght > 0) {
         NSLog("External user id: %@" user.externalUserId];
@@ -497,13 +451,11 @@ Objective-C:
     
     // Perform any code
 }];
-
 ```
 
 Swift:
 
 ```
-
 ZGRMessaging.sharedInstance().saveUserPhoneNumber("79876543210") { user, error in
     
     if let userId = user?.externalUserId, userId.count > 0 {
@@ -516,7 +468,6 @@ ZGRMessaging.sharedInstance().saveUserPhoneNumber("79876543210") { user, error i
     
     // Perform any code
 }
-
 ```
 
 ### Персонализация
@@ -526,7 +477,6 @@ ZGRMessaging.sharedInstance().saveUserPhoneNumber("79876543210") { user, error i
 Objective-C:
 
 ```
-
 [[ZGRMessaging sharedInstance] personalizeWithExternalUserId:@"id1" completionHandler:^{
     if (user.externalUserId.lenght > 0) {
         NSLog("External user id: %@" user.externalUserId];
@@ -537,12 +487,11 @@ Objective-C:
 
     // Perform any code
 }];
-
 ```
+
 Swift:
 
 ```
-
 ZGRMessaging.sharedInstance().personalize(withExternalUserId: "id1") { user, error in
     
     if let userId = user?.externalUserId, userId.count > 0 {
@@ -555,7 +504,6 @@ ZGRMessaging.sharedInstance().personalize(withExternalUserId: "id1") { user, err
     
     // Perform any code
 }
-
 ```
 
 #### Деперсонализация (выход).
@@ -564,15 +512,12 @@ Objective-C:
 
 ```
 [[ZGRMessaging sharedInstance] depersonalizeWithCompletionHandler:nil];
-
 ```
 
 Swift:
 
 ```
-
 ZGRMessaging.sharedInstance().depersonalize()
-
 ```
 
 
@@ -583,25 +528,21 @@ ZGRMessaging.sharedInstance().depersonalize()
 Objective-C:
 
 ```
-
 [[ZGRMessaging sharedInstance] fetchInstallationWithCompletionHandler:^(ZGRInstallation * _Nullable installation, ZGRError * _Nullable error) {
     // Perform any code
     NSLog(@"%@", installation.subscriptions);
 }];
-
 ```
 
 Swift:
 
 ```
-
 ZGRMessaging.sharedInstance().fetchInstallation() { installation, error in
     // Perform any code
     if let subscriptions = installation?.subscriptions {
         print("subscriptions: \(subscriptions)")
     }
 }
-
 ```
 
 
@@ -609,9 +550,7 @@ ZGRMessaging.sharedInstance().fetchInstallation() { installation, error in
 
 Objective-C:
 
-
 ```
-
 ZGRInstallation *installation = self.installation;
 installation.isPrimary = NO;
 
@@ -621,7 +560,6 @@ NSArray<ZGRSubscription *> *subscriptions = installation.subscriptions;
 [[ZGRMessaging sharedInstance] saveInstallation:installation withCompletionHandler:^{
     
 }];
-
 ```
 
 
@@ -632,16 +570,13 @@ NSArray<ZGRSubscription *> *subscriptions = installation.subscriptions;
 Objective-C:
 
 ```
-
 [ZGRMessaging sharedInstance].localDatabaseEnabled = YES;
-
 ```
+
 Swift:
 
 ```
-
 ZGRMessaging.sharedInstance().isLocalDatabaseEnabled = true
-
 ```
 
 #### Получение всех сохраненных уведомлений из базы данных.
@@ -649,22 +584,18 @@ ZGRMessaging.sharedInstance().isLocalDatabaseEnabled = true
 Objective-C:
 
 ```
-
 [[ZGRMessaging sharedInstance] fetchAllNotificationsWithCompletionHandler:^(NSArray<ZGRNotification *> * _Nullable notifications,
                                                                             ZGRError * _Nullable error) {
     // Perform any code
 }];
-
 ```
 
 Swift:
 
 ```
-
 ZGRMessaging.sharedInstance().fetchAllNotifications() { notification, error in
     // Perform any code
 }
-
 ```
 
 #### Получение части уведомлений из базы данных.
@@ -672,7 +603,6 @@ ZGRMessaging.sharedInstance().fetchAllNotifications() { notification, error in
 Objective-C:
 
 ```
-
 ZGRDatabaseRequest *request = [ZGRDatabaseRequest new];
 request.fetchLimit = 5;
 request.pageOffset = 1;
@@ -681,13 +611,11 @@ request.fromDate = [NSDate dateWithTimeIntervalSinceReferenceDate:*];
                                                                                          ZGRError * _Nullable error) {
     // Perform any code
 }];
-
 ```
 
 Swift:
 
 ```
-
 let request = ZGRDatabaseRequest()
 request.fetchLimit = 5
 request.pageOffset = 1
@@ -696,7 +624,6 @@ request.fromDate = Date(timeIntervalSinceReferenceDate: 10000)
 ZGRMessaging.sharedInstance().fetchNotifications(with: request) { notification, error in
     // Perform any code
 }
-
 ```
 
 #### Удаление уведомления из базы данных.
@@ -704,7 +631,6 @@ ZGRMessaging.sharedInstance().fetchNotifications(with: request) { notification, 
 Objective-C:
 
 ```
-
 [[ZGRMessaging sharedInstance] deleteNotification:notification withCompletionHandler:^(BOOL success, ZGRError * _Nullable error) {
     if (!success) {
         return;
@@ -712,20 +638,16 @@ Objective-C:
 
     // Perform any code
 }];
-
 ```
 
 Swift:
 
 ```
-
 ZGRMessaging.sharedInstance().delete(notification) { success, error in
     if !success { return }
     // Perform any code
 }
-
 ```
-
 
 
 
