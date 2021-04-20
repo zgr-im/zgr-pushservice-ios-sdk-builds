@@ -6,7 +6,9 @@ FOUNDATION_EXPORT const unsigned char ZGRImSDKVersionString[];
 
 // Main
 #import <ZGRImSDK/ZGRConfig.h>
+#import <ZGRImSDK/ZGRConstants.h>
 #import <ZGRImSDK/ZGRMessaging.h>
+#import <ZGRImSDK/ZGRLogging.h>
 #import <ZGRImSDK/ZGRError.h>
 
 // Main (Application Extensions)

@@ -12,6 +12,10 @@
 		<data>
 		YNL8IuuKSC2MObdws0o207Wh3Uk=
 		</data>
+		<key>Headers/ZGRConstants.h</key>
+		<data>
+		pVP/vccIqAgBtkLQaH0rRWDxJuk=
+		</data>
 		<key>Headers/ZGRContent.h</key>
 		<data>
 		x9KMVKFI9F8V5zWrXJndhycGLg8=
@@ -26,11 +30,15 @@
 		</data>
 		<key>Headers/ZGRImSDK.h</key>
 		<data>
-		h9JXbhcROdhd2nwGlCaoi2y666I=
+		Rwe34YF7P6vz8eNkAwePQ4JXfKM=
 		</data>
 		<key>Headers/ZGRInstallation.h</key>
 		<data>
 		qCaQDCbT2QUoaiLis0TAzzzdDpE=
+		</data>
+		<key>Headers/ZGRLogging.h</key>
+		<data>
+		riz0IvMcFS+pzTRevj6zBeZ9+7g=
 		</data>
 		<key>Headers/ZGRMessaging.h</key>
 		<data>
@@ -58,7 +66,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		qXFlEqS2QmSCdil0LtCllIHf3pE=
+		Byx8FcTE6NVx+W74XwW46CwLwzw=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -89,6 +97,13 @@
 			Vjac7z8VMtuUUcMZTRodmsAFoZ/knYwJGL4q6ptG+SA=
 			</data>
 		</dict>
+		<key>Headers/ZGRConstants.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			drS/blJoOrIZPhsx2MVLzmDlrI3pYfMJgoSncFrfLuc=
+			</data>
+		</dict>
 		<key>Headers/ZGRContent.h</key>
 		<dict>
 			<key>hash2</key>
@@ -114,7 +129,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			wV08G6zSqeRGoOy4z2QiCB37M3OCtBeysKmp9ueEJY8=
+			yUzf8TQtOA850XxjRpC/KzMofLqxtaa4O7znMcv1MiM=
 			</data>
 		</dict>
 		<key>Headers/ZGRInstallation.h</key>
@@ -122,6 +137,13 @@
 			<key>hash2</key>
 			<data>
 			XJOM/3SAAibxz/9A1VFdVsIW1qx6KqP8Aps8Azhf9ng=
+			</data>
+		</dict>
+		<key>Headers/ZGRLogging.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			IUM5rg/HSlA3hOZjt+GC9Y1lJ40RfBpoLb6I6ftgaS8=
 			</data>
 		</dict>
 		<key>Headers/ZGRMessaging.h</key>
