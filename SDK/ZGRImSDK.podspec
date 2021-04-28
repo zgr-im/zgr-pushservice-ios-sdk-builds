@@ -11,6 +11,6 @@ Pod::Spec.new do |spec|
   spec.license      = "MIT"
   spec.platform     = :ios, "11.0"
   spec.source       = { :git => "https://github.com/zgr-im/zgr-pushservice-ios-sdk-builds.git", :tag => "#{spec.version}" }
-  spec.vendored_frameworks  = "ZGRImSDK.xcframework"
+  spec.vendored_frameworks = 'ZGRImSDK.xcframework'
 
 end
