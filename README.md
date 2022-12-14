@@ -34,6 +34,8 @@
 * с помощью менеджера пакетов Carthage (файл `carthage_installation.md` в каталоге `installation`),
 * с помощью Swift Package Manager (файл `spm_installation.md` в каталоге `installation`).
 
+Каталог `installation` расположен по адресу https://github.com/zgr-im/zgr-push-service-ios-sdk/tree/main/installation.
+
 
 ## Интеграция приложения с APNS
 
