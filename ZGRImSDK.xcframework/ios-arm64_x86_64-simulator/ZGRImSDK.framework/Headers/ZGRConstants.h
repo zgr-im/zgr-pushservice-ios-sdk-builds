@@ -11,6 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 FOUNDATION_EXPORT NSString *ZGRDidReceiveRemoteNotificationKey;
 FOUNDATION_EXPORT NSString *ZGRDidOpenRemoteNotificationKey;
+FOUNDATION_EXPORT NSString *ZGRDidLaunchAppFromRemoteNotificationKey;
 
 @end
 

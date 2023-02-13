@@ -103,6 +103,11 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletion
  */
 - (void)checkSeensAndUpdateNotificationStatus;
 
+/**
+ @brief Broadcast event of launch/open application from received push notification.
+ */
+- (void)broadcastEventLaunchAppFromRemoteNotification;
+
 
 @end
 
