@@ -9,6 +9,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)didLoadView:(UIView *)view;
 - (void)didReceiveNotification:(UNNotification *)notification completionHandler:(void(^)(NSArray<UNNotificationAction *>* _Nullable notificationActions))completionHandler;
 
+- (BOOL)isZGRNotification:(NSDictionary *)userInfo;
+
 + (instancetype)sharedInstance;
 
 + (instancetype)new NS_UNAVAILABLE;

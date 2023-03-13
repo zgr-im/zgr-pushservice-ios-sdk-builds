@@ -50,11 +50,11 @@
 		</data>
 		<key>Headers/ZGRNotificationContent.h</key>
 		<data>
-		CxDfdkKN0rXDNCSAIDkQ1kRF284=
+		h/FjYZ+vyacsmxMZhl9oc3dd2j4=
 		</data>
 		<key>Headers/ZGRNotificationService.h</key>
 		<data>
-		f+HrgTnsjms2FU+W2ywNYwDP44w=
+		9Q7W0WqhZ7MReH2m1EkvWIUNxh8=
 		</data>
 		<key>Headers/ZGRSubscription.h</key>
 		<data>
@@ -66,7 +66,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		5V/P99sRHbg9S9DSH8ctvGlBpmY=
+		n6KL1Mr1Uni+RIAzaO6HSmhduLc=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -180,14 +180,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			+TUvPKKvgQKXuuegQ5iVXX2ofyNn/r3Q7K043naC7f4=
+			+8T6gkIgo4r4m00Vvb1Bn2aNjNOICawWGDYVr01GCWs=
 			</data>
 		</dict>
 		<key>Headers/ZGRNotificationService.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			xrc1eJGRWmGHskIOuXgNqa8cKf1J9gxAoIeeQZwU6Hc=
+			N+QerzhizKD4WZrP8l2Ev6e2Bgv4AT6rDZ7QW2X1YZA=
 			</data>
 		</dict>
 		<key>Headers/ZGRSubscription.h</key>
