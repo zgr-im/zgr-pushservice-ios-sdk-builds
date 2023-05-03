@@ -108,6 +108,11 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletion
  */
 - (void)broadcastEventLaunchAppFromRemoteNotification;
 
+/**
+ @brief Update status on PGW for selected notification.
+ */
+- (void)updateNotificationStatus:(NSString *)status forNotificationWithID:(NSString *)notificationId;
+
 
 @end
 
