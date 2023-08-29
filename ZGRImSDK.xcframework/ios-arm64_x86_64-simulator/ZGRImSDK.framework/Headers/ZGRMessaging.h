@@ -113,7 +113,6 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletion
  */
 - (void)updateNotificationStatus:(NSString *)status forNotificationWithID:(NSString *)notificationId;
 
-
 @end
 
 @interface ZGRMessaging (User)
@@ -130,6 +129,14 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletion
  @return This method returns YES if phone number has correct format.
  */
 - (BOOL)saveUserPhoneNumber:(NSString *)phoneNumber withCompletionHandler:(void(^)(ZGRUser * _Nullable user, ZGRError * _Nullable error))completionHandler;
+
+/**
+ @brief Associates external user id and phone number (optional) with this installation.
+ @param externalUserId External user identifier.
+ @param phoneNumber Phone number including +, hyphens, spaces, (, ) are removed. Regex: "7\d{10}". Passing number containing letters is illegal and be discarded.
+ @param completionHandler Completion handler.
+ */
+- (BOOL)saveUserPhoneNumber:(NSString *)phoneNumber externalUserId:(NSString *)externalUserId withCompletionHandler:(void(^)(ZGRUser * _Nullable user, ZGRError * _Nullable error))completionHandler;
 
 @end
 

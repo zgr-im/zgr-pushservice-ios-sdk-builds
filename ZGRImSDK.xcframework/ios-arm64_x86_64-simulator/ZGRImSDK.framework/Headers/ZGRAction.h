@@ -19,10 +19,13 @@ typedef NS_ENUM(NSInteger, ZGRActionType) {
 @property (nonatomic, assign, readonly) ZGRActionType type;
 @property (nonatomic, copy, readonly) NSString *identifier;
 @property (nonatomic, copy, readonly) NSString *title;
+@property (nonatomic, copy, readonly) NSString *urlString;
+
+- (NSString *)rawType;
 
 - (nullable instancetype)initWithDictionary:(NSDictionary *)dictionary;
 - (instancetype)initWithNotificationResponse:(UNNotificationResponse *)response;
-- (instancetype)initWithIdentifier:(NSString *)identifier title:(NSString *)title;
+- (instancetype)initWithIdentifier:(NSString *)identifier title:(NSString *)title urlString:(NSString *)urlString;
 
 + (instancetype)new NS_UNAVAILABLE;
 - (instancetype)init NS_UNAVAILABLE;
