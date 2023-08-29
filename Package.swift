@@ -11,7 +11,7 @@ let package = Package(
     ],
     targets: [
         .binaryTarget(name: "ZGRImSDK",
-                      url: "https://github.com/zgr-im/zgr-pushservice-ios-sdk-builds/releases/download/1.6.5/ZGRImSDK.xcframework.zip",
-                      checksum: "fd7d0d8d6e6249ffeabba400280a7064660901afca3eb9545e8ebac1f3ce0ca7")
+                      url: "https://github.com/zgr-im/zgr-pushservice-ios-sdk-builds/releases/download/1.7.1/ZGRImSDK.xcframework.zip",
+                      checksum: "ee4435b500054dab78a8d2d35fadc87e62753224164b9b97a5c738d96419e5ae")
     ]
 )
