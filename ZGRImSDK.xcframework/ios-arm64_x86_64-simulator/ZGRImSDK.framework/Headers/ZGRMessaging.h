@@ -113,6 +113,11 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletion
  */
 - (void)updateNotificationStatus:(NSString *)status forNotificationWithID:(NSString *)notificationId;
 
+/**
+ @brief Checked is notifications granted in applications settings.
+ */
+- (void)checkIsPushGranted;
+
 @end
 
 @interface ZGRMessaging (User)
