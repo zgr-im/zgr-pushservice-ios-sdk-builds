@@ -5,9 +5,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ZGRNotificationService : UNNotificationServiceExtension
 
-- (void)didReceiveNotificationRequest:(UNNotificationRequest *)request
+@property (nonatomic, strong) void (^contentHandler)(UNNotificationContent *);
+@property (nonatomic, strong) UNMutableNotificationContent *bestContent;
+
+- (void)zgr_didReceiveNotificationRequest:(UNNotificationRequest *)request
                    withContentHandler:(void (^)(UNNotificationContent * _Nonnull))contentHandler;
-- (void)serviceExtensionTimeWillExpire;
+- (void)zgr_serviceExtensionTimeWillExpire;
 - (BOOL)isZGRNotification:(NSDictionary *)userInfo;
 
 @end

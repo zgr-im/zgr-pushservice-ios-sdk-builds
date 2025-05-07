@@ -3,6 +3,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+static NSString * const ZGRAppGroupNameKey = @"ZGR_APP_GROUP_NAME_KEY";
+
 /**
  @brief Configuration class.
  */
@@ -22,6 +24,14 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (NSString *)getSDKVersion;
 
+/**
+ @brief Gets the NSBundle of the primary application
+ */
++ (NSBundle *)primaryBundle;
+
+/**
+ @brief Shared instance of config
+ */
 + (nullable instancetype)sharedInstance;
 
 + (instancetype)new NS_UNAVAILABLE;

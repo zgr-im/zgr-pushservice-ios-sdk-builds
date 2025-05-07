@@ -10,7 +10,7 @@
 		</data>
 		<key>Headers/ZGRConfig.h</key>
 		<data>
-		8GKCRaSy42sfD9iPVV42prXS28w=
+		FKdAWYJ5t1LF/a7og2T0aITQJ4I=
 		</data>
 		<key>Headers/ZGRConstants.h</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Headers/ZGRNotificationService.h</key>
 		<data>
-		9Q7W0WqhZ7MReH2m1EkvWIUNxh8=
+		GDuVuF1Myv8f0eGd3gS9HVGaYeU=
 		</data>
 		<key>Headers/ZGRSubscription.h</key>
 		<data>
@@ -66,7 +66,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		JrraJ0R5x1qS3X4x9R7Um8s61UI=
+		1SCeEaEQ6hFmbA71ota1Le29l8k=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -74,23 +74,23 @@
 		</data>
 		<key>ZGRDatabase.momd/VersionInfo.plist</key>
 		<data>
-		ClQU898Ce46vi0DElegNYYNw82Y=
+		oCc5k5vmK8J45YYy22imlGALG9Q=
 		</data>
 		<key>ZGRDatabase.momd/ZGRDatabase v2.mom</key>
 		<data>
-		dqGstmQzQ6JebnmehEjX3CF8jrU=
+		pHME2K8TJJYC7zGCf5QT6oL/+IA=
 		</data>
 		<key>ZGRDatabase.momd/ZGRDatabase v3.mom</key>
 		<data>
-		1wLO4lQQ6bJFtXpO8ivc1YQAeGU=
+		LMNLWNqE4onCpF+GTciLNwfcN3Y=
 		</data>
 		<key>ZGRDatabase.momd/ZGRDatabase v4.mom</key>
 		<data>
-		jj+RbsuWhKnXqooJxE4AZjdUxPA=
+		viRGjAs9DNOte5gfcyEVmB8aqpM=
 		</data>
 		<key>ZGRDatabase.momd/ZGRDatabase v5.mom</key>
 		<data>
-		wl+i1Ebjoj8Xrmf8bscwhCFztLc=
+		kflKxdc4ql3fICoH3nroe4RT5M8=
 		</data>
 		<key>ZGRDatabase.momd/ZGRDatabase v5.omo</key>
 		<data>
@@ -98,7 +98,7 @@
 		</data>
 		<key>ZGRDatabase.momd/ZGRDatabase.mom</key>
 		<data>
-		CKX+Gp1n9wcXd56JrBQX0TR/vU4=
+		X1tIbcVoQVosFfl4+pVly3olS9c=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -114,7 +114,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			mCFgFxA1OUAzb2xg8sZQjNitlIb8LFRH5KVs70vIOQ0=
+			qDA/e/+L/R4g9HlfaKXB1RThNa0ggSJQRuNZATn+yMk=
 			</data>
 		</dict>
 		<key>Headers/ZGRConstants.h</key>
@@ -191,7 +191,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			N+QerzhizKD4WZrP8l2Ev6e2Bgv4AT6rDZ7QW2X1YZA=
+			Yglx+HI64adWmZHGm2E+4X/akZPkpP6gGlJ4cuRqOSM=
 			</data>
 		</dict>
 		<key>Headers/ZGRSubscription.h</key>
@@ -219,35 +219,35 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			EK7wIjrcQvPjvc0a8z0GebKFIdUt46Sf9g04a56ipGQ=
+			EuZR9x4L2PC40HmPlSOqhbZr+cNOYZrrn23DhnxkQvQ=
 			</data>
 		</dict>
 		<key>ZGRDatabase.momd/ZGRDatabase v2.mom</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			PusGRuVQSC4pVBTw1C1VfGssUOempRD3w2rH9BSdcqo=
+			JkmtO40G6p+336AjpAbYz3TtL5xmhLW9dFkepHwvsEE=
 			</data>
 		</dict>
 		<key>ZGRDatabase.momd/ZGRDatabase v3.mom</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			qJyZcy4/iISxmCvL0eJWYa9w8GIX/s8143FggcPWBrg=
+			sLtaJWSkKL5Xi82r1bCoS1rRBUNrEYvvQ0Wv/Kj+Tq4=
 			</data>
 		</dict>
 		<key>ZGRDatabase.momd/ZGRDatabase v4.mom</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			YWUI4eEMY3OXftvaid4lsVWuFtuobOfX2oGR17xcXIk=
+			Qr2ijdTv+Mm+IYcSy4L2ppaj3tBN19i8QZghysb82l0=
 			</data>
 		</dict>
 		<key>ZGRDatabase.momd/ZGRDatabase v5.mom</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			9nkopSj/rgMa37hx83Yz1MvQPdUrHdmWj2GwFLXawnk=
+			AGV+kNUpAOlsrixbCnZxVmgG/JHV9mj+3z6LKcwaOS8=
 			</data>
 		</dict>
 		<key>ZGRDatabase.momd/ZGRDatabase v5.omo</key>
@@ -261,7 +261,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			i2aJwodxunK96Se+0DDbTPz/SNcfInWvkpMhka5fVe0=
+			NDL0IVeIl1AlukBCgc0yPrXA+n5PC94uNdM7C5qW+tk=
 			</data>
 		</dict>
 	</dict>
